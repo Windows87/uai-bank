@@ -80,8 +80,7 @@ void transferirSaldo(int idOrigem, int idDestino, double quantia) {
   if (usuarioOrigem && usuarioDestino && usuarioOrigem->saldo >= quantia) {
     usuarioOrigem->saldo -= quantia;
     usuarioDestino->saldo += quantia;
-    printf("Transferência de R$%.2f do usuário %d para o usuário %d realizada "
-           "com sucesso.\n",
+    printf("Transferência de R$%.2f do usuário %d para o usuário %d realizada com sucesso.\n",
            quantia, idOrigem, idDestino);
   } else {
     if (!usuarioOrigem) {
@@ -193,13 +192,11 @@ int main() {
     case 4: {
       int idOrigem, idDestino;
       double quantia;
-      printf("Insira o ID do usuário de origem, o ID de destino e a quantia a "
-             "ser transferida (separados por vírgula): ");
+      printf("Insira o ID do usuário de origem, o ID de destino e a quantia a ser transferida (separados por vírgula): ");
       if (scanf("%d,%d,%lf", &idOrigem, &idDestino, &quantia) == 3) {
         transferirSaldo(idOrigem, idDestino, quantia);
       } else {
-        printf("Erro: Entrada inválida. Certifique-se de inserir dois IDs "
-               "inteiros e uma quantia separados por vírgula.\n");
+        printf("Erro: Entrada inválida. Certifique-se de inserir dois IDs inteiros e uma quantia separados por vírgula.\n");
         while (getchar() != '\n'); // Limpa o buffer
       }
       break;
